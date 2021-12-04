@@ -1,2 +1,2 @@
 # Hi Aerin
-print('Hello')
+print('Hi')
