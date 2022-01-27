@@ -1,12 +1,13 @@
 import random
 
+# guessing game where the computer guesses the user's number
 def guess_game(x):
     random_number = random.randint(0, x)
     print(random_number)
     answer = 'no'
     while answer != 'yes':
         print('Is this your number?')
-        answer = input(f'Type too low, too high or yes: ')
+        answer = input('Type too low, too high or yes: ')
         if answer == 'too low':
             print(random_number + 1)
             random_number = random_number + 1
@@ -16,4 +17,5 @@ def guess_game(x):
         else:
             print('Yay!')
 
-guess_game(20)
+range = int(input('Choose a range from  0 to: '))
+guess_game(range)
