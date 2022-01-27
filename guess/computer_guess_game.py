@@ -8,8 +8,12 @@ def guess_game(x):
         print('Is this your number?')
         answer = input(f'Type too low, too high or yes: ')
         if answer == 'too low':
-            print (random_number + 1)
+            print(random_number + 1)
+            random_number = random_number + 1
         elif answer == 'too high':
-            print (random_number - 1)
+            print(random_number - 1)
+            random_number = random_number - 1
         else:
-            print ('Yay!')
+            print('Yay!')
+
+guess_game(20)
