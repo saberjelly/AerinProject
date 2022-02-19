@@ -72,8 +72,10 @@ def hangman_game():
 
 
 def intersection(c, l):
-
-     while len(set.intersection(set(c), set(l))) != 1:
-        print(hangman_prints[6])
+    x = 7
+    print(hangman_prints[x])
+    while len(set.intersection(set(c), set(l))) != 1:
+        print(hangman_prints[x - 1])
+        letter = input('Guess a letter: ')
 
 hangman_game()
