@@ -68,14 +68,22 @@ def hangman_game():
     print(underbar)
     #User guesses a letter
     letter = input('Guess a letter: ')
-    intersection(chosen_word, letter)
+    intersect_result = intersection(chosen_word, letter)
+    if intersect_result == True:
+        display_guesses = ""
+        for l in chosen_word:
+            if l == letter:
+                display_guesses = display_guesses + l
+            else:
+                display_guesses = display_guesses + "_"
+        print(display_guesses)
 
 
 def intersection(c, l):
-    x = 7
-    print(hangman_prints[x])
-    while len(set.intersection(set(c), set(l))) != 1:
-        print(hangman_prints[x - 1])
-        letter = input('Guess a letter: ')
+    i = set.intersection(set(c), set(l))
+    if len(i) == 1:
+        return True
+    else:
+        return False
 
 hangman_game()
