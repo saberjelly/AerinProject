@@ -82,6 +82,7 @@ def hangman_game():
     else:
         lives = lives - 1
         print(hangman_prints[lives])
+        print(underbar)
 
 
 def intersection(c, l):
