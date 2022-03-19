@@ -63,10 +63,12 @@ hangman_prints = {
 
 def hangman_game():
     chosen_word = random.choice(word_list)
+    lives = 7
     #Shows the user the number of letters in the word
     underbar = len(chosen_word)*"_"
     print(underbar)
     #User guesses a letter
+    #Insert while loop to allow the user to guess another letter or terminate
     letter = input('Guess a letter: ')
     intersect_result = intersection(chosen_word, letter)
     if intersect_result == True:
@@ -77,6 +79,9 @@ def hangman_game():
             else:
                 display_guesses = display_guesses + "_"
         print(display_guesses)
+    else:
+        lives = lives - 1
+        print(hangman_prints[lives])
 
 
 def intersection(c, l):
