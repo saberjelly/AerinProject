@@ -68,18 +68,20 @@ def hangman_game():
     underbar = len(chosen_word)*"_"
     print(underbar)
     #User guesses a letter
-    #Change previous_guess to be a list of string characters
+    # TODO Exit strategy:
+    # 1. ask the player to guess the word. (a) if player guesses incorrectly, subtract life and display hangman. (b) if player guess correctly, exit out of the loop and say "You Won!".
+    # 2. exit while loop if player fills out the entire word.
     previous_guess = underbar
     while lives > 0:
         letter = input('Guess a letter: ')
         intersect_result = intersection(chosen_word, letter)
         if intersect_result == True:
-            display_guesses = previous_guess
+            display_guesses = ""
             for i, l in enumerate(chosen_word):
                 if l == letter:
-                    display_guesses = display_guesses - display_guesses[i]
+                    display_guesses = display_guesses + l
                 else:
-                    display_guesses = display_guesses + "_"
+                    display_guesses = display_guesses + previous_guess[i]
             print(display_guesses)
             previous_guess = display_guesses
         else:
