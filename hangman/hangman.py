@@ -68,9 +68,6 @@ def hangman_game():
     underbar = len(chosen_word)*"_"
     print(underbar)
     #User guesses a letter
-    # TODO Exit strategy:
-    # 1. ask the player to guess the word. (a) if player guesses incorrectly, subtract life and display hangman. (b) if player guess correctly, exit out of the loop and say "You Won!".
-    # 2. exit while loop if player fills out the entire word.
     previous_guess = underbar
     while lives > 0:
         letter = input('Guess a letter: ')
@@ -84,10 +81,18 @@ def hangman_game():
                     display_guesses = display_guesses + previous_guess[i]
             print(display_guesses)
             previous_guess = display_guesses
+            user_guess = input('Guess the word: ')
+            if user_guess == chosen_word:
+                print('You win!')
+                break
+            else:
+                lives = lives - 1
+                print(hangman_prints[lives])
+                print('Incorrect')
         else:
             lives = lives - 1
             print(hangman_prints[lives])
-            print(underbar)
+            print(previous_guess)
 
 
 def intersection(c, l):
