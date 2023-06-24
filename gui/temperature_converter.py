@@ -22,8 +22,8 @@ result_c = tk.Label(master=frame1, text="\N{DEGREE CELSIUS}")
 initial_entry1.grid(row=0, column=0, sticky="e")
 label_f.grid(row=0, column=1, sticky="w")
 frame1.grid(row=0, column=0, padx=10)
-button_celsius.grid(row=0, column=1)#, pady=10)
-result_c.grid(row=0, column=2, padx=10)
+button_celsius.grid(row=0, column=2)
+result_c.grid(row=0, column=3, padx=10)
 
 # C to F
 initial_entry2 = tk.Entry(master=frame1, width=10)
@@ -33,7 +33,7 @@ result_f = tk.Label(master=frame1, text="\N{DEGREE FAHRENHEIT}")
 
 initial_entry2.grid(row=1, column=0, sticky="e")
 label_c.grid(row=1, column=1, sticky="w")
-button_fahrenheit.grid(row=1, column=1)#, pady=10)
-result_f.grid(row=1, column=2, padx=10)
+button_fahrenheit.grid(row=1, column=2)
+result_f.grid(row=1, column=3, padx=10)
 
 window.mainloop()
